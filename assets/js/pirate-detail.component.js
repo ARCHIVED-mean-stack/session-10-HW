@@ -12,7 +12,7 @@ angular.module('pirateDetail', []).component('pirateDetail', {
             self.back = function () {
                 $location.path('/');
             }
-            self.editorEnabled = true;
+            self.editorEnabled = false;
 
             self.enableEditor = function () {
                 self.editorEnabled = true;
