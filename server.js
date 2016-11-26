@@ -19,7 +19,7 @@ var sassSources = './assets/scss/**/*.scss';
 var sassOutput = './assets/css';
 var htmlSource = './assets/**/*.html';
 
-gulp.task('sass', function() {
+gulp.task('sass', function () {
     return gulp.src(sassSources)
         .pipe(sourcemaps.init())
         .pipe(sass(sassOptions).on('error', sass.logError))
@@ -47,7 +47,7 @@ app.use(express.static('assets'))
 
 app.use(bodyParser.json());
 
-db.on('error', function() {
+db.on('error', function () {
     throw new Error('unable to connect at' + mongoUri);
 })
 
