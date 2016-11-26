@@ -5,25 +5,25 @@ angular.module('pirateDetail', []).component('pirateDetail', {
         function PirateDetailController($http, $routeParams, $location) {
             var self = this;
             $http.get('/api/pirates/' + $routeParams.pirateId)
-                .then(function(response) {
+                .then(function (response) {
                     self.pirate = response.data;
                 });
 
-            self.back = function() {
+            self.back = function () {
                 $location.path('/');
             }
-            self.editorEnabled = false;
+            self.editorEnabled = true;
 
-            self.enableEditor = function() {
+            self.enableEditor = function () {
                 self.editorEnabled = true;
             }
-            self.disableEditor = function() {
+            self.disableEditor = function () {
                 self.editorEnabled = false;
             }
-            self.savePirate = function(pirate, pid) {
+            self.savePirate = function (pirate, pid) {
                 console.log(pirate.name)
                 $http.put('/api/pirates/' + pid, pirate)
-                    .then(function(res) {
+                    .then(function (res) {
                         self.editorEnabled = false;
                     })
             }
