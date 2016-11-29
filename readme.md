@@ -5,13 +5,11 @@
 - add validation to the edit pirate form
 - add a cancel botton to the edit pirate form
 
-
-
-`assets/js/pirate-detail.component.js`
-
 `assets/templates/pirate-detail.html`
 
+Reset the default state of the details page for ease of applying styles (watch out for the comma in the object declaration).
 
+`self.editorEnabled = true;`
 
 ```html
 <h1>Pirate Detail View</h1>
@@ -29,10 +27,6 @@
         <button class="btn btn-primary" type="submit" ng-click="$ctrl.back()">Back</button>
     </div>
 ```
-
-Reset the default state of the page for ease of editing (watch out for the comma in the object declaration).
-
-`self.editorEnabled = true;`
 
 ```html
 <div ng-show="$ctrl.editorEnabled">
@@ -84,7 +78,9 @@ Add the hidden paragraphs with $touched and $invalid.
 </div>
 ```
 
-Fix for the cancel button
+The cancel button:
+
+`assets/js/pirate-detail.component.js`
 
 ```js
 angular.module('pirateDetail', []).component('pirateDetail', {
@@ -126,6 +122,8 @@ angular.module('pirateDetail', []).component('pirateDetail', {
     ]
 });
 ```
+
+Final html template:
 
 ```
 <h1>Pirate Detail View</h1>
